@@ -19,6 +19,7 @@ pipeline {
           # copy files to server
           #
           chmod +x k8s-deploy.sh
+	  dos2unix k8s-deploy.sh
           ./k8s-deploy.sh $MYUSER_USERNAME $MYUSER_PASSWORD                  
           
         '''
