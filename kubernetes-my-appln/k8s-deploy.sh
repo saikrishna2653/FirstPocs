@@ -32,7 +32,8 @@ fi
 
 HOST=$1
 user=$2
-
+echo "HOST "$HOST
+echo "user "$user
 # append date to log file
 #curdate=$(date)
 #curdate=$(date +%Y-%m-%d' '%H:%M:%S,%3N)
