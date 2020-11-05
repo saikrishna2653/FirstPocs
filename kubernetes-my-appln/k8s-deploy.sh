@@ -32,8 +32,8 @@ fi
 
 HOST= '18.232.51.222'
 user= 'dockeradmin'
-echo "HOST "$HOST
-echo "user "$user
+echo "HOST $HOST"
+echo "user $user"
 # append date to log file
 #curdate=$(date)
 #curdate=$(date +%Y-%m-%d' '%H:%M:%S,%3N)
