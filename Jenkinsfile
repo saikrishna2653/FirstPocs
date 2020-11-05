@@ -9,9 +9,7 @@ pipeline {
     }   
    stage('Deploy in to Kubernetes pods') {    
     // "jenkins_token" is the id for the sonar token
-    withCredentials([
-            usernamePassword(credentialsId: 'jenkins_host_user', passwordVariable: 'MYUSER_PASSWORD', usernameVariable: 'MYUSER_USERNAME')
-    ]) {
+   withCredentials([usernamePassword(credentialsId: 'jenkins_host_user', passwordVariable: 'MYUSER_PASSWORD', usernameVariable: 'MYUSER_USERNAME')]) {
       dir('kubernetes-my-appln') {
         sh '''        
           
