@@ -30,10 +30,11 @@ if [[ -z "${2}" ]]; then
   exit 1
 fi
 
-HOST= '18.232.51.222'
-user= 'dockeradmin'
-echo "HOST $HOST"
-echo "user $user"
+HOST="18.232.51.222"
+user="dockeradmin"
+echo $HOST
+echo $user
+
 # append date to log file
 #curdate=$(date)
 #curdate=$(date +%Y-%m-%d' '%H:%M:%S,%3N)
