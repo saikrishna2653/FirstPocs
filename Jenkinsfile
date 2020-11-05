@@ -20,7 +20,7 @@ pipeline {
           #
           chmod +x k8s-deploy.sh
 	  sed -i -e 's/\r$//' k8s-deploy.sh
-          ./k8s-deploy.sh $MYUSER_USERNAME $MYUSER_PASSWORD                  
+          ./k8s-deploy.sh 18.232.51.222 dockeradmin                  
           
         '''
 		}
