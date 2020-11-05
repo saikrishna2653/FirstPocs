@@ -30,8 +30,8 @@ if [[ -z "${2}" ]]; then
   exit 1
 fi
 
-HOST=$1
-user=$2
+HOST= '18.232.51.222'
+user= 'dockeradmin'
 echo "HOST "$HOST
 echo "user "$user
 # append date to log file
