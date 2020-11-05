@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 ################################################################################
 # Include environment variables and common functions,
 # Source it AFTER the definition of the printUsage function
