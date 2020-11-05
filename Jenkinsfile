@@ -4,7 +4,8 @@ pipeline {
     stage('Source') { // Get code
       steps {
         // get code from our Git repository
-        git 'https://github.com/saikrishna2653/crud_examples.git'
+       // git 'https://github.com/saikrishna2653/crud_examples.git'
+	checkout scm      
       }
     }   
    stage('Deploy in to Kubernetes pods') { 
