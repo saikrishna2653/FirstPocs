@@ -30,8 +30,8 @@ if [[ -z "${2}" ]]; then
   exit 1
 fi
 
-HOST="18.232.51.222"
-user="dockeradmin"
+HOST=$1
+user=$2
 echo $HOST
 echo $user
 
