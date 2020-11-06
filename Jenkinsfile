@@ -1,6 +1,10 @@
 
 pipeline {
   agent { label 'master' }
+   environment {
+     HOST_NAME="3.237.40.210"
+     def USER_ID="dockeradmin"
+   }	
   stages {
     stage('Source') { // Get code
       steps {
@@ -13,8 +17,7 @@ pipeline {
 	 steps {   
       dir('kubernetes-my-appln') {
         sh ''' 
-	def HOST_NAME= '3.237.40.210'
-	def USER_ID= 'dockeradmin'
+	
 	
 	"echo ${HOST_NAME}"
 	"echo ${USER_ID}"         
