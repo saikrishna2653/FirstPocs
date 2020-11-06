@@ -32,22 +32,20 @@ fi
 
 HOST=$1
 user=$2
-echo $HOST
-echo $user
 
 # append date to log file
 #curdate=$(date)
 #curdate=$(date +%Y-%m-%d' '%H:%M:%S,%3N)
 #curdate=$(date +"%F_%T")
 
-src_dir="/var/lib/jenkins/"
+src_dir="/etc/kubernetes/"
 dest_dir="/opt"
 
 if [ -d "$src_dir" ]; then
     echo "create destination directory ${dest_dir}/kubernetes_Deloy"
-    ssh dockeradmin@18.232.51.222 "sudo mkdir -p $dest_dir/kubernetes_Deloy; sudo chmod 777 $dest_dir/kubernetes_Deloy"
+    ssh $user@$HOST "sudo mkdir -p $dest_dir/kubernetes_Deloy; sudo chmod 777 $dest_dir/kubernetes_Deloy"
     echo "k8s files"
-    sudo rsync -avzr  -e "ssh -i /home/dockeradmin/.ssh/id_rsa" --rsync-path="sudo rsync" *.yml dockeradmin@18.232.51.222:$dest_dir/kubernetes_Deloy    
+    sudo rsync -avzr  -e "ssh -i /home/$user/.ssh/id_rsa" --rsync-path="sudo rsync" *.yml $user@$HOST:$dest_dir/kubernetes_Deloy    
 else
   echo "Error: files not found. Can not continue."
   exit 1
