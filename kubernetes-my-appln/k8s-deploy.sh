@@ -38,7 +38,7 @@ user=$2
 #curdate=$(date +%Y-%m-%d' '%H:%M:%S,%3N)
 #curdate=$(date +"%F_%T")
 
-src_dir="/etc/kubernetes/"
+src_dir="/var/lib/jenkins/"
 dest_dir="/opt"
 
 if [ -d "$src_dir" ]; then
