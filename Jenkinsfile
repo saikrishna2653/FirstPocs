@@ -17,13 +17,14 @@ pipeline {
 	 steps {   
       dir('kubernetes-my-appln') {
         sh '''        
-          
+          echo "${HOST_NAME}"
+	  echo "${USER_ID}"
           #
           # copy files to server
           #
           chmod +x k8s-deploy.sh
 	  sed -i -e 's/\r$//' k8s-deploy.sh
-          ./k8s-deploy.sh ${HOST_NAME} ${USER_ID}
+          ./k8s-deploy.sh "${HOST_NAME}" "${USER_ID}"
         '''		
       }
     }
