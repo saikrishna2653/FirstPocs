@@ -18,9 +18,7 @@ pipeline {
       dir('kubernetes-my-appln') {
         sh ''' 
 	
-	
-	"echo ${HOST_NAME}"
-	"echo ${USER_ID}"         
+		   
           #
           # copy files to server
           #
