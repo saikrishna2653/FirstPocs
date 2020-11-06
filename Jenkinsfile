@@ -24,7 +24,7 @@ pipeline {
           #
           chmod +x k8s-deploy.sh
 	  sed -i -e 's/\r$//' k8s-deploy.sh
-          ./k8s-deploy.sh "${HOST_NAME}" "${USER_ID}"
+           su dockeradmin -c './k8s-deploy.sh "${HOST_NAME}" "${USER_ID}"'
         '''		
       }
     }
