@@ -1,8 +1,4 @@
 
-def HOST_NAME= '3.237.40.210'
-
-def USER_ID= 'dockeradmin'
-
 pipeline {
   agent { label 'master' }
   stages {
@@ -17,6 +13,9 @@ pipeline {
 	 steps {   
       dir('kubernetes-my-appln') {
         sh ''' 
+	def HOST_NAME= '3.237.40.210'
+	def USER_ID= 'dockeradmin'
+	
 	"echo ${HOST_NAME}"
 	"echo ${USER_ID}"         
           #
@@ -24,7 +23,7 @@ pipeline {
           #
           chmod +x k8s-deploy.sh
 	  sed -i -e 's/\r$//' k8s-deploy.sh
-          ./k8s-deploy.sh "echo ${HOST_NAME}" "echo ${USER_ID}"
+          ./k8s-deploy.sh "${HOST_NAME}" "${USER_ID}"
         '''		
       }
     }
