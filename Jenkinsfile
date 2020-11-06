@@ -1,7 +1,6 @@
-@Field
+
 def HOST_NAME= '3.237.40.210'
 
-@Field
 def USER_ID= 'dockeradmin'
 
 pipeline {
