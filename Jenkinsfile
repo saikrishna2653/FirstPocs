@@ -1,3 +1,9 @@
+@Field
+def HOST_NAME= '3.237.40.210'
+
+@Field
+def USER_ID= 'dockeradmin'
+
 pipeline {
   agent { label 'master' }
   stages {
@@ -9,9 +15,7 @@ pipeline {
       }
     }   
    stage('Deploy in to Kubernetes pods') { 
-	 steps {
-    // "jenkins_token" is the id for the sonar token
-   withCredentials([usernamePassword(credentialsId: 'jenkins_host_user', passwordVariable: 'MYUSER_PASSWORD', usernameVariable: 'MYUSER_USERNAME')]) {
+	 steps {   
       dir('kubernetes-my-appln') {
         sh '''        
           
@@ -20,10 +24,8 @@ pipeline {
           #
           chmod +x k8s-deploy.sh
 	  sed -i -e 's/\r$//' k8s-deploy.sh
-          ./k8s-deploy.sh $MYUSER_USERNAME $MYUSER_PASSWORD                
-          
-        '''
-		}
+          ./k8s-deploy.sh HOST_NAME USER_ID 
+        '''		
       }
     }
   }
